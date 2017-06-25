@@ -14,10 +14,8 @@ package 'ntp' do
   action :install
 end
 
-file '/etc/motd' do
-  content 'This computer is the procperty of Ted Zahner'
-  owner 'root'
-  group 'root'
+template '/etc/motd' do
+  source 'motd.erb'
   action :create
 end
 
